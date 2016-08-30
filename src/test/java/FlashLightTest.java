@@ -28,11 +28,7 @@ public class FlashLightTest {
         Assert.assertEquals(" Flashing ", test.switchOnFlash());
 
 
-
     }
-
-
-
 
 
 }
