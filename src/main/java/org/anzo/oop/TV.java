@@ -21,28 +21,29 @@ public class TV {
         this.channel = channel;
     }
 
-    public void setChannelName(String channelName) {
-        try {
-            if (channelName.equals("Discovery") || channelName.equals("1+1") || channelName.equals("MTV")) {
-                this.channelName = channelName;
-            } else throw new IllegalArgumentException();
-        } catch (Exception e) {
-            System.out.println(e);
+    public String setChannelName(String channelName) {
+        String out;
+
+        if (channelName.equals("Discovery")& power == true || channelName.equals("1+1")& power == true || channelName.equals("MTV") & power == true) {
+            this.channelName = channelName;
+            out = (channelName + " is Playing");
+        } else {
+            out = " Error";
         }
-        if (power == true) {
-            System.out.println(channelName + " is Playing");
-        }
+        return out;
     }
 
-    public void setVolume(int volume) {
-        try {
-            if (volume <= 100 && volume >= 0 && power == true) {
-                this.volume = volume;
-                System.out.println("volume is " + volume + " % ");
-            } else throw new IllegalArgumentException();
-        } catch (Exception e) {
-            System.out.println(e);
+    public String setVolume(int volume) {
+
+        String out;
+
+        if (volume <= 100 && volume >= 0 && power == true) {
+            this.volume = volume;
+            out = ("volume is " + volume + " % ");
+        } else {
+            out = " Error";
         }
+        return out;
 
     }
 
