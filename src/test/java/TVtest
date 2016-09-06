@@ -1,0 +1,78 @@
+package OopTests;
+
+
+import org.anzo.oop.TV;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
+
+/**
+ * Created by anzo0316 on 9/6/2016.
+ */
+public class TvTest {
+    TV testTV;
+    @Before
+
+
+    public void sterts(){
+
+     testTV = new TV("Sony", "JS0001", 3);
+        testTV.isPowerOn();
+}
+
+    @Test
+
+
+
+    public void volumeTest(){
+
+        String result = testTV.setVolume(97);
+        String exp = "volume is 97 % ";
+
+        assertThat(result, is(exp));
+    }
+
+    @Test
+
+    public void discoveryTest(){
+
+        String result = testTV.setChannelName(("Discovery"));
+        String exp = "Discovery is Playing";
+
+        assertThat(result, is(exp));
+    }
+    @Test
+    public void onePuloneTest(){
+        String result = testTV.setChannelName(("1+1"));
+        String exp = "1+1 is Playing";
+
+        assertThat(result, is(exp));
+    }
+    @Test
+    public void mTvTest(){
+        String result = testTV.setChannelName(("MTV"));
+        String exp = "MTV is Playing";
+
+        assertThat(result, is(exp));
+    }
+
+    @Test
+    public  void volumeErrorTest(){
+        String result = testTV.setVolume(102);
+        String exp = " Error";
+
+        assertThat(result, is(exp));
+    }
+
+    @Test
+    public void channelErrorTest(){
+        String result = testTV.setChannelName(("NTV"));
+        String exp = " Error";
+
+        assertThat(result, is(exp));
+    }
+
+}
